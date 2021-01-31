@@ -25,7 +25,7 @@ public class Main {
         System.out.println("\nAfter ArrivalBeforeDeparture filter: ");
         filter.dynamicFilter(testSet, Arrays.asList(new ArrivalBeforeDeparture())).forEach(System.out::println);
 
-        System.out.println("\nAfter MoreThanTwoHoursOnEarth filter: ");
+        System.out.println("\nAfter MoreThanTwoHoursOnGround filter: ");
         filter.dynamicFilter(testSet, Arrays.asList(new MoreThanTwoHoursOnGround())).forEach(System.out::println);
 
         //implement multiple filters on a single list
