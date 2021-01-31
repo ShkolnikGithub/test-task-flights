@@ -19,7 +19,7 @@ public class MoreThanTwoHoursOnGround extends FlightFilter {
 
             for (int i = 0; i < listOfSegm.size() - 1; i++) {
                 timeOnGround += Duration.between(
-                listOfSegm.get(i).getArrivalDate(), listOfSegm.get(i + 1).getDepartureDate()).toHours();
+                        listOfSegm.get(i).getArrivalDate(), listOfSegm.get(i + 1).getDepartureDate()).toHours();
             }
 
             if (timeOnGround > 2.0) {
