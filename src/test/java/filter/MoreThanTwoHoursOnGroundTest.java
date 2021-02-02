@@ -14,8 +14,8 @@ public class MoreThanTwoHoursOnGroundTest {
     @Test
     public void filterTest() {
         List<Flight> testSet = FlightBuilder.createFlights();
-        List<Flight> expected = new MoreThanTwoHoursOnGround().filter(testSet);
-        List<Flight> result = Arrays.asList(testSet.get(0), testSet.get(1), testSet.get(2), testSet.get(3));
+        List<Flight> expected = Arrays.asList(testSet.get(0), testSet.get(1), testSet.get(2), testSet.get(3));
+        List<Flight> result = new MoreThanTwoHoursOnGround().filter(testSet);
         Assert.assertEquals(expected, result);
     }
 }

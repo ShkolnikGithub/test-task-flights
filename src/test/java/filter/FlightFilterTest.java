@@ -17,11 +17,11 @@ public class FlightFilterTest {
     @Test
     public void filterTest() {
         List<Flight> testSet = FlightBuilder.createFlights();
-        List<Flight> expected = new FlightFilter().dynamicFilter(testSet, Arrays.asList(
+        List<Flight> expected = Arrays.asList(testSet.get(0), testSet.get(1));
+        List<Flight> result = new FlightFilter().dynamicFilter(testSet, Arrays.asList(
                 new DepartureBeforeCurrentTime(),
                 new ArrivalBeforeDeparture(),
                 new MoreThanTwoHoursOnGround()));
-        List<Flight> result = Arrays.asList(testSet.get(0), testSet.get(1));
         Assert.assertEquals(expected, result);
     }
 }

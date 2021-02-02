@@ -14,8 +14,8 @@ public class ArrivalBeforeDepartureTest {
     @Test
     public void filterTest() {
         List<Flight> testSet = FlightBuilder.createFlights();
-        List<Flight> expected = new ArrivalBeforeDeparture().filter(testSet);
-        List<Flight> result = Arrays.asList(testSet.get(0), testSet.get(1), testSet.get(2), testSet.get(4), testSet.get(5));
+        List<Flight> expected = Arrays.asList(testSet.get(0), testSet.get(1), testSet.get(2), testSet.get(4), testSet.get(5));
+        List<Flight> result = new ArrivalBeforeDeparture().filter(testSet);
         Assert.assertEquals(expected, result);
     }
 }
