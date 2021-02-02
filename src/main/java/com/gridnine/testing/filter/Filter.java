@@ -8,7 +8,7 @@ public interface Filter<T> {
     List<T> filter(List<T> list);
 
     default List<T> dynamicFilter(List<T> listT, List<Filter> listFilters) {
-        List<T> result = new ArrayList<T>(listT);
+        List<T> result = new ArrayList<>(listT);
 
         for (Filter filter : listFilters) {
             result = filter.filter(result);
