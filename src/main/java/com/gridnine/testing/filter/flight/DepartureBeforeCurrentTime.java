@@ -12,7 +12,7 @@ public class DepartureBeforeCurrentTime extends FlightFilter {
     public List<Flight> filter(List<Flight> allFlights) {
 
         return allFlights.stream().filter(flight -> flight.getSegments()
-                .stream().anyMatch(segment -> !segment.getDepartureDate().isBefore(LocalDateTime.now())))
+                .stream().noneMatch(segment -> segment.getDepartureDate().isBefore(LocalDateTime.now())))
                 .collect(Collectors.toList());
     }
 }
